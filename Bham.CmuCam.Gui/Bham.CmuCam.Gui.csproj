@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46385FDD-B4D7-4205-AAA4-744766A8E3B7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bham.CmuCam.Gui</RootNamespace>
+    <AssemblyName>Bham.CmuCam.Gui</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitmapEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BitmapEditor.Designer.cs">
+      <DependentUpon>BitmapEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmuView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CmuView.Designer.cs">
+      <DependentUpon>CmuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistogramDisplay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HistogramDisplay.Designer.cs">
+      <DependentUpon>HistogramDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeanDisplay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MeanDisplay.Designer.cs">
+      <DependentUpon>MeanDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PortSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PortSelectForm.Designer.cs">
+      <DependentUpon>PortSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortSelectForm.resx">
+      <DependentUpon>PortSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="TrackBar2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrackingColors.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bham.CmuCam\Bham.CmuCam.csproj">
+      <Project>{009FC89B-2085-490D-A212-86AA7BF16118}</Project>
+      <Name>Bham.CmuCam</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\1-Select.png" />
+    <Content Include="Help\10-Servos.png" />
+    <Content Include="Help\2-Error.png" />
+    <Content Include="Help\3-Initial.png" />
+    <Content Include="Help\4-Image.png" />
+    <Content Include="Help\5-Tracking1.png" />
+    <Content Include="Help\5-Tracking2.png" />
+    <Content Include="Help\6-Diff.png" />
+    <Content Include="Help\7-Mean.png" />
+    <Content Include="Help\7-Mean2.png" />
+    <Content Include="Help\8-Histo.png" />
+    <Content Include="Help\9-Aux.png" />
+    <Content Include="Help\Help.htm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

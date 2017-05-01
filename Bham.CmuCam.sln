@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bham.CmuCam", "Bham.CmuCam\Bham.CmuCam.csproj", "{009FC89B-2085-490D-A212-86AA7BF16118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bham.CmuCam.Gui", "Bham.CmuCam.Gui\Bham.CmuCam.Gui.csproj", "{46385FDD-B4D7-4205-AAA4-744766A8E3B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{009FC89B-2085-490D-A212-86AA7BF16118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{009FC89B-2085-490D-A212-86AA7BF16118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{009FC89B-2085-490D-A212-86AA7BF16118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{009FC89B-2085-490D-A212-86AA7BF16118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46385FDD-B4D7-4205-AAA4-744766A8E3B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46385FDD-B4D7-4205-AAA4-744766A8E3B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46385FDD-B4D7-4205-AAA4-744766A8E3B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46385FDD-B4D7-4205-AAA4-744766A8E3B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

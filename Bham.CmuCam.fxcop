@@ -1,0 +1,1022 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.36" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files (x86)\microsoft .net tools\fxcop\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-US" />
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+  <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/Bham.CmuCam/bin/Debug/Bham.CmuCam.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.36">
+  <Namespaces>
+   <Namespace Name="Bham.CmuCam">
+    <Messages>
+     <Message Id="Bham" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-11-27 20:00:58Z">
+      <Issue Name="Namespace">
+       <Item>Bham</Item>
+       <Item>Bham.CmuCam</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Bham.CmuCam.Packets">
+    <Messages>
+     <Message Id="Bham" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+      <Issue Name="Namespace">
+       <Item>Bham</Item>
+       <Item>Bham.CmuCam.Packets</Item>
+      </Issue>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/Bham.CmuCam/bin/Debug/Bham.CmuCam.dll">
+    <Modules>
+     <Module Name="bham.cmucam.dll">
+      <Messages>
+       <Message Id="Bham" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-11-27 20:00:58Z">
+        <Issue Name="Assembly">
+         <Item>Bham</Item>
+         <Item>'Bham.CmuCam.dll'</Item>
+        </Issue>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="Bham.CmuCam">
+        <Types>
+         <Type Name="CameraRegister">
+          <Messages>
+           <Message TypeName="EnumsShouldHaveZeroValue" Category="Microsoft.Design" CheckId="CA1008" Status="Excluded" Created="2010-11-27 20:00:58Z" FixCategory="NonBreaking">
+            <Issue Name="NotFlagsNoZeroValue">
+             <Item>'CameraRegister'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="CameraRegisterValues">
+          <Members>
+           <Member Name="#ColorRgb">
+            <Messages>
+             <Message Id="Rgb" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-11-27 20:00:58Z">
+              <Issue Name="Member">
+               <Item>Rgb</Item>
+               <Item>'CameraRegisterValues.ColorRgb'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ColorRgbWB">
+            <Messages>
+             <Message Id="Rgb" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-11-27 20:00:58Z">
+              <Issue Name="Member">
+               <Item>Rgb</Item>
+               <Item>'CameraRegisterValues.ColorRgbWB'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ColorYCbCr">
+            <Messages>
+             <Message Id="Cb" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2010-12-02 17:09:50Z">
+              <Issue Name="Member">
+               <Item>Cb</Item>
+               <Item>'CameraRegisterValues.ColorYCbCr'</Item>
+               <Item>CB</Item>
+              </Issue>
+             </Message>
+             <Message Id="Cr" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2010-12-02 17:09:50Z">
+              <Issue Name="Member">
+               <Item>Cr</Item>
+               <Item>'CameraRegisterValues.ColorYCbCr'</Item>
+               <Item>CR</Item>
+              </Issue>
+             </Message>
+             <Message Id="Cb" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-12-02 17:09:50Z">
+              <Issue Name="Member">
+               <Item>Cb</Item>
+               <Item>'CameraRegisterValues.ColorYCbCr'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ColorYCbCrWB">
+            <Messages>
+             <Message Id="Cb" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2010-12-02 17:09:50Z">
+              <Issue Name="Member">
+               <Item>Cb</Item>
+               <Item>'CameraRegisterValues.ColorYCbCrWB'</Item>
+               <Item>CB</Item>
+              </Issue>
+             </Message>
+             <Message Id="Cr" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Status="Excluded" Created="2010-12-02 17:09:50Z">
+              <Issue Name="Member">
+               <Item>Cr</Item>
+               <Item>'CameraRegisterValues.ColorYCbCrWB'</Item>
+               <Item>CR</Item>
+              </Issue>
+             </Message>
+             <Message Id="Cb" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-12-02 17:09:50Z">
+              <Issue Name="Member">
+               <Item>Cb</Item>
+               <Item>'CameraRegisterValues.ColorYCbCrWB'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Channels">
+          <Messages>
+           <Message TypeName="OnlyFlagsEnumsShouldHavePluralNames" Category="Microsoft.Naming" CheckId="CA1717" Status="Excluded" Created="2010-11-27 20:00:58Z">
+            <Issue>
+             <Item>'Channels'</Item>
+            </Issue>
+           </Message>
+           <Message TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724" Status="Excluded" Created="2010-11-27 20:00:58Z">
+            <Issue Name="System">
+             <Item>'Channels'</Item>
+             <Item>System.Runtime.Remoting.Channels</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="CmuCam2">
+          <Members>
+           <Member Name="#_stateLineModeDiff">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-12-02 15:32:17Z">
+              <Issue>
+               <Item>'CmuCam2._stateLineModeDiff'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_stateLineModeMean">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-12-02 15:32:17Z">
+              <Issue>
+               <Item>'CmuCam2._stateLineModeMean'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_stateLineModeTrack">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-12-02 15:32:17Z">
+              <Issue>
+               <Item>'CmuCam2._stateLineModeTrack'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_statePacketFiltering">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2._statePacketFiltering'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_statePacketSkipRate">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2._statePacketSkipRate'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_statePollMode">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2._statePollMode'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_stateSerialDelay">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2._stateSerialDelay'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_stateTrackMax">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-12-02 15:32:17Z">
+              <Issue>
+               <Item>'CmuCam2._stateTrackMax'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_stateTrackMin">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-12-02 15:32:17Z">
+              <Issue>
+               <Item>'CmuCam2._stateTrackMin'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ComPortName">
+            <Messages>
+             <Message Id="ComPort" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="Excluded" Created="2010-11-27 20:00:58Z">
+              <Issue Name="MemberShouldBeDiscreteTerm">
+               <Item>ComPort</Item>
+               <Item>'CmuCam2.ComPortName'</Item>
+               <Item>Comport</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetAuxIO()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2010-11-27 20:00:58Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetAuxIO()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetButtonPress()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2010-11-27 20:00:58Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetButtonPress()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMeanColor()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2010-11-27 20:00:58Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetMeanColor()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMeanColorMode1()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2010-12-06 21:37:57Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetMeanColorMode1()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMeanColorMode1Stream()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2010-12-06 21:37:57Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetMeanColorMode1Stream()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMeanColorMode2()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2010-12-06 21:37:57Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetMeanColorMode2()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMeanColorMode2Stream()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2010-12-06 21:37:57Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetMeanColorMode2Stream()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetMeanColorStream()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2010-12-02 15:32:17Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetMeanColorStream()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetServoLevels()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2010-12-02 15:32:17Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetServoLevels()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetTrackingColors(System.Drawing.Color&amp;,System.Drawing.Color&amp;)">
+            <Messages>
+             <Message Id="0#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Status="Excluded" Created="2010-12-02 15:32:17Z">
+              <Issue>
+               <Item>'min'</Item>
+              </Issue>
+             </Message>
+             <Message Id="1#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Status="Excluded" Created="2010-12-02 15:32:17Z">
+              <Issue>
+               <Item>'max'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetTrackingMode1StreamFromVWCenter()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2010-12-06 21:37:57Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetTrackingMode1StreamFromVWCenter()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetTrackingMode2StreamFromVWCenter()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Created="2010-12-06 21:37:57Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetTrackingMode2StreamFromVWCenter()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetTrackingStreamFromVWCenter()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2010-12-02 15:32:17Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetTrackingStreamFromVWCenter()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetVersion()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2.GetVersion()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetVirtualWindow()">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2010-12-02 17:09:50Z">
+              <Issue Certainty="50">
+               <Item>'CmuCam2.GetVirtualWindow()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetDownSampling(System.Byte,System.Byte)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-11-27 20:00:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'CmuCam2.SetDownSampling(byte, byte)'</Item>
+               <Item>x</Item>
+               <Item>'xFactor'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-11-27 20:00:58Z">
+              <Issue Name="MemberParameter">
+               <Item>'CmuCam2.SetDownSampling(byte, byte)'</Item>
+               <Item>y</Item>
+               <Item>'yFactor'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetOutputMask(Bham.CmuCam.PacketType,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2.SetOutputMask(PacketType, bool, bool, bool, bool, bool, bool, bool, bool)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetOutputMask(Bham.CmuCam.PacketType,System.Byte)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2.SetOutputMask(PacketType, byte)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetPacketFiltering(System.Boolean)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2.SetPacketFiltering(bool)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetPacketSkipRate(System.Int32)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2.SetPacketSkipRate(int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetPollMode(System.Boolean)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2.SetPollMode(bool)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetSerialDelay(System.Byte)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'CmuCam2.SetSerialDelay(byte)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetSerialMode(System.Boolean,System.Boolean,System.Boolean)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2010-11-27 20:00:58Z">
+              <Issue>
+               <Item>'CmuCam2.SetSerialMode(bool, bool, bool)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SetVirtualWindow(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <Messages>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-12-02 17:09:50Z">
+              <Issue Name="MemberParameterMoreMeaningfulName">
+               <Item>'CmuCam2.SetVirtualWindow(byte, byte, byte, byte)'</Item>
+               <Item>'x'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2010-12-02 17:09:50Z">
+              <Issue Name="MemberParameterMoreMeaningfulName">
+               <Item>'CmuCam2.SetVirtualWindow(byte, byte, byte, byte)'</Item>
+               <Item>'y'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="CmuCam2Baud">
+          <Messages>
+           <Message TypeName="EnumsShouldHaveZeroValue" Category="Microsoft.Design" CheckId="CA1008" Status="Excluded" Created="2010-11-27 20:00:58Z" FixCategory="NonBreaking">
+            <Issue Name="NotFlagsNoZeroValue">
+             <Item>'CmuCam2Baud'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="Servo">
+          <Messages>
+           <Message TypeName="DoNotPrefixEnumValuesWithTypeName" Category="Microsoft.Naming" CheckId="CA1712" Status="Excluded" Created="2010-12-02 15:32:17Z">
+            <Issue>
+             <Item>Servo1</Item>
+             <Item>'Servo'</Item>
+            </Issue>
+            <Issue>
+             <Item>Servo2</Item>
+             <Item>'Servo'</Item>
+            </Issue>
+            <Issue>
+             <Item>Servo3</Item>
+             <Item>'Servo'</Item>
+            </Issue>
+            <Issue>
+             <Item>Servo4</Item>
+             <Item>'Servo'</Item>
+            </Issue>
+            <Issue>
+             <Item>Servo5</Item>
+             <Item>'Servo'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Bham.CmuCam.Packets">
+        <Types>
+         <Type Name="DPacket">
+          <Members>
+           <Member Name="#.ctor(System.Int32,System.Int32,System.String)">
+            <Messages>
+             <Message Id="t" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacket.DPacket(int, int, string)'</Item>
+               <Item>t</Item>
+               <Item>'tPacket'</Item>
+              </Issue>
+             </Message>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacket.DPacket(int, int, string)'</Item>
+               <Item>x</Item>
+               <Item>'xAxisSegments'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacket.DPacket(int, int, string)'</Item>
+               <Item>y</Item>
+               <Item>'yAxisSegments'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DPacketM1">
+          <Members>
+           <Member Name="#.ctor(System.Byte,System.Byte,System.Byte[],System.Int32,System.Int32,System.String)">
+            <Messages>
+             <Message Id="d" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacketM1.DPacketM1(byte, byte, byte[], int, int, string)'</Item>
+               <Item>d</Item>
+               <Item>'dPacket'</Item>
+              </Issue>
+             </Message>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacketM1.DPacketM1(byte, byte, byte[], int, int, string)'</Item>
+               <Item>x</Item>
+               <Item>'xAxisSegments'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacketM1.DPacketM1(byte, byte, byte[], int, int, string)'</Item>
+               <Item>y</Item>
+               <Item>'yAxisSegments'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_bitmap">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'DPacketM1._bitmap'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DPacketM2">
+          <Members>
+           <Member Name="#.ctor(System.Byte,System.Byte,System.Byte[],System.Int32,System.Int32,System.String)">
+            <Messages>
+             <Message Id="d" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacketM2.DPacketM2(byte, byte, byte[], int, int, string)'</Item>
+               <Item>d</Item>
+               <Item>'dPacket'</Item>
+              </Issue>
+             </Message>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacketM2.DPacketM2(byte, byte, byte[], int, int, string)'</Item>
+               <Item>x</Item>
+               <Item>'xAxisSegments'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacketM2.DPacketM2(byte, byte, byte[], int, int, string)'</Item>
+               <Item>y</Item>
+               <Item>'yAxisSegments'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DPacketM3">
+          <Members>
+           <Member Name="#.ctor(System.Byte,System.Byte,System.Byte[],System.Int32,System.Int32,System.String)">
+            <Messages>
+             <Message Id="d" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacketM3.DPacketM3(byte, byte, byte[], int, int, string)'</Item>
+               <Item>d</Item>
+               <Item>'dPacket'</Item>
+              </Issue>
+             </Message>
+             <Message Id="x" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacketM3.DPacketM3(byte, byte, byte[], int, int, string)'</Item>
+               <Item>x</Item>
+               <Item>'xAxisSegments'</Item>
+              </Issue>
+             </Message>
+             <Message Id="y" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'DPacketM3.DPacketM3(byte, byte, byte[], int, int, string)'</Item>
+               <Item>y</Item>
+               <Item>'yAxisSegments'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="PacketReader`1">
+          <Members>
+           <Member Name="#ReadBinaryBitmapAA(System.IO.Ports.SerialPort,System.Byte&amp;,System.Byte&amp;,System.Int32&amp;,System.Byte[]&amp;)">
+            <Messages>
+             <Message Id="1#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'width'</Item>
+              </Issue>
+             </Message>
+             <Message Id="2#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'height'</Item>
+              </Issue>
+             </Message>
+             <Message Id="3#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'stride'</Item>
+              </Issue>
+             </Message>
+             <Message Id="4#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'bitmap'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ReadBinaryBitmapFCFD(System.IO.Ports.SerialPort,System.Byte&amp;,System.Byte&amp;,System.Int32&amp;,System.Byte[]&amp;)">
+            <Messages>
+             <Message Id="1#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'width'</Item>
+              </Issue>
+             </Message>
+             <Message Id="2#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'height'</Item>
+              </Issue>
+             </Message>
+             <Message Id="3#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'stride'</Item>
+              </Issue>
+             </Message>
+             <Message Id="4#" TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'bitmap'</Item>
+              </Issue>
+             </Message>
+             <Message Id="FCFD" TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709" Created="2010-12-06 21:37:57Z">
+              <Issue Name="Member">
+               <Item>FCFD</Item>
+               <Item>'PacketReader&lt;T&gt;.ReadBinaryBitmapFCFD(SerialPort, out byte, out byte, out int, out byte[])'</Item>
+               <Item>Fcfd</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SPacketM1">
+          <Members>
+           <Member Name="#.ctor(Bham.CmuCam.Packets.SPacketM1Row[],System.String)">
+            <Messages>
+             <Message Id="s" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM1.SPacketM1(SPacketM1Row[], string)'</Item>
+               <Item>s</Item>
+               <Item>'sPacket'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_rows">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'SPacketM1._rows'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SPacketM1Row">
+          <Members>
+           <Member Name="#.ctor(System.Byte,System.Byte,System.Byte)">
+            <Messages>
+             <Message Id="b" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM1Row.SPacketM1Row(byte, byte, byte)'</Item>
+               <Item>b</Item>
+               <Item>'bMean'</Item>
+              </Issue>
+             </Message>
+             <Message Id="g" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM1Row.SPacketM1Row(byte, byte, byte)'</Item>
+               <Item>g</Item>
+               <Item>'gMean'</Item>
+              </Issue>
+             </Message>
+             <Message Id="r" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM1Row.SPacketM1Row(byte, byte, byte)'</Item>
+               <Item>r</Item>
+               <Item>'rMean'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SPacketM2">
+          <Members>
+           <Member Name="#.ctor(Bham.CmuCam.Packets.SPacketM2Row[],System.String)">
+            <Messages>
+             <Message Id="s" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM2.SPacketM2(SPacketM2Row[], string)'</Item>
+               <Item>s</Item>
+               <Item>'sPacket'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#_rows">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'SPacketM2._rows'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SPacketM2Row">
+          <Members>
+           <Member Name="#.ctor(System.Byte,System.Byte,System.Byte,System.Byte,System.Byte,System.Byte)">
+            <Messages>
+             <Message Id="b" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM2Row.SPacketM2Row(byte, byte, byte, byte, byte, byte)'</Item>
+               <Item>b</Item>
+               <Item>'bDev'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM2Row.SPacketM2Row(byte, byte, byte, byte, byte, byte)'</Item>
+               <Item>b</Item>
+               <Item>'bMean'</Item>
+              </Issue>
+             </Message>
+             <Message Id="g" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM2Row.SPacketM2Row(byte, byte, byte, byte, byte, byte)'</Item>
+               <Item>g</Item>
+               <Item>'gDev'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM2Row.SPacketM2Row(byte, byte, byte, byte, byte, byte)'</Item>
+               <Item>g</Item>
+               <Item>'gMean'</Item>
+              </Issue>
+             </Message>
+             <Message Id="r" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM2Row.SPacketM2Row(byte, byte, byte, byte, byte, byte)'</Item>
+               <Item>r</Item>
+               <Item>'rDev'</Item>
+              </Issue>
+              <Issue Name="MemberParameter">
+               <Item>'SPacketM2Row.SPacketM2Row(byte, byte, byte, byte, byte, byte)'</Item>
+               <Item>r</Item>
+               <Item>'rMean'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TPacket">
+          <Members>
+           <Member Name="#Centroid">
+            <Messages>
+             <Message Id="Centroid" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="Member">
+               <Item>Centroid</Item>
+               <Item>'TPacket.Centroid'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TPacketM1">
+          <Members>
+           <Member Name="#.ctor(System.Byte,System.Byte,System.Int32,System.Byte[],System.String)">
+            <Messages>
+             <Message Id="t" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'TPacketM1.TPacketM1(byte, byte, int, byte[], string)'</Item>
+               <Item>t</Item>
+               <Item>'tPacket'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TPacketM2">
+          <Members>
+           <Member Name="#.ctor(Bham.CmuCam.Packets.TPacketM2Row[],System.String)">
+            <Messages>
+             <Message Id="t" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2010-12-06 21:37:57Z">
+              <Issue Name="MemberParameter">
+               <Item>'TPacketM2.TPacketM2(TPacketM2Row[], string)'</Item>
+               <Item>t</Item>
+               <Item>'tPacket'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Rows">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'TPacketM2.Rows'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TPacketM2Row">
+          <Members>
+           <Member Name="#.ctor(System.Byte,System.Byte,System.Byte,System.Byte,System.Byte)">
+            <Messages>
+             <Message Id="confidence" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2010-12-06 21:37:57Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'confidence'</Item>
+               <Item>'TPacketM2Row.TPacketM2Row(byte, byte, byte, byte, byte)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="pixelCount" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2010-12-06 21:37:57Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'pixelCount'</Item>
+               <Item>'TPacketM2Row.TPacketM2Row(byte, byte, byte, byte, byte)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Confidence">
+            <Accessors>
+             <Accessor Name="#set_Confidence(System.Byte)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2010-12-06 21:37:57Z">
+                <Issue>
+                 <Item>'TPacketM2Row.Confidence.set(byte)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#PixelCount">
+            <Accessors>
+             <Accessor Name="#set_PixelCount(System.Byte)">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2010-12-06 21:37:57Z">
+                <Issue>
+                 <Item>'TPacketM2Row.PixelCount.set(byte)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TPacketReader">
+          <Members>
+           <Member Name="#ReadPacket(System.IO.Ports.SerialPort)">
+            <Messages>
+             <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2010-12-06 21:37:57Z">
+              <Issue>
+               <Item>'TPacketReader.ReadPacket(SerialPort)'</Item>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Rules>
+   <Rule TypeName="AvoidOutParameters" Category="Microsoft.Design" CheckId="CA1021">
+    <Resolution Name="Default">Consider a design that does not require that {0} be an out parameter.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+    <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+    <Resolution Name="MemberShouldBeDiscreteTerm">The compound word '{0}' in member name {1} exists as a discrete term. If your usage is intended to be single word, case it as '{2}' or strip the first token entirely if it represents any sort of Hungarian notation.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotPrefixEnumValuesWithTypeName" Category="Microsoft.Naming" CheckId="CA1712">
+    <Resolution Name="Default">Remove {1} from {0}.</Resolution>
+   </Rule>
+   <Rule TypeName="EnumsShouldHaveZeroValue" Category="Microsoft.Design" CheckId="CA1008">
+    <Resolution Name="NotFlagsNoZeroValue">Add a member to {0} that has a value of zero with a suggested name of 'None'.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1709">
+    <Resolution Name="Member">Correct the casing of '{0}' in member name {1} by changing it to '{2}'.</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Resolution Name="Assembly">Correct the spelling of '{0}' in assembly name {1}.</Resolution>
+    <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+    <Resolution Name="MemberParameter">In method {0}, correct the spelling of '{1}' in parameter name {2} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+    <Resolution Name="MemberParameterMoreMeaningfulName">In method {0}, consider providing a more meaningful name than parameter name {1}.</Resolution>
+    <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
+   </Rule>
+   <Rule TypeName="OnlyFlagsEnumsShouldHavePluralNames" Category="Microsoft.Naming" CheckId="CA1717">
+    <Resolution Name="Default">If the name {0} is plural, change it to its singular form.</Resolution>
+   </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+   </Rule>
+   <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+    <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+    <Resolution Name="Default">{0} makes a call to {1} that does not explicitly provide a StringComparison. This should be replaced with a call to {2}.</Resolution>
+   </Rule>
+   <Rule TypeName="TypeNamesShouldNotMatchNamespaces" Category="Microsoft.Naming" CheckId="CA1724">
+    <Resolution Name="System">The type name {0} conflicts in whole or in part with the namespace name '{1}' defined in the .NET Framework. Rename the type to eliminate the conflict.</Resolution>
+   </Rule>
+   <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+    <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>CMUcam2 Viewer and Bham.Cmu Library Documentation</title>
+	<style type="text/css">
+h2, h3, h4 { float: none; clear: both; border-bottom: 1px solid #999; }
+img { float: left; margin: 1em; }
+	</style>
+</head>
+<body>
+	
+	<h1>CMUcam2 Viewer</h1>
+	<p>Copyright 2010 David Rees, licensed under the GPL.</p>
+	<p><a href="http://cmucam.codeplex.com">http://cmucam.codeplex.com</a></p>
+	
+	<h2>Introduction</h2>
+	
+	<p>The CMUcam2 Viewer program is a GUI application that visualises most data output by CMUcam2 cameras.</p>
+	<p>The Bham.Cmu library contains a .NET class library for working with the CMUcam2 camera system over a serial port.</p>
+	
+	<h2>Bham.Cmu Library</h2>
+	
+	<p>Read this section if you are interested in developing applications based on the CLR (.NET Framework, Mono, or DotGNU).</p>
+	<p>Note that the library has not been tested on anything other than the .NET Framework 2.0 and 4.0. (so the Compact Framework and Linux/Mac support remains unknown), but any compile-time errors should be easy to fix.</p>
+	<p>The library has been built with assistance from FxCop, so it should be a pleasure to develop against.</p>
+	<p>The 'Stream' methods, like <code>GetDifferenceStream</code> return an <code>IEnumerable</code> instance that returns a new packet on each iteration (so every call to <code>MoveNext()</code> or <code>foreach</code> will advance to the next packet passed up the serial line). To stop the stream you must call <code>StopStream()</code> on the camera instance.</p>
+	
+	<p>The only important class is <code>Bham.Cmu.CmuCam2</code>, it exposes a method for each operation supported by the camera. Every method that alters the configuration state of the camera (such as <code>SetVirtualWindow</code>) also updates a cached state value within the CmuCam2 class, which allows you to query state rather than having to maintain it yourself.</p>
+	<p>Most of the methods have associated XML documentation text, but it isn't exhaustive. Please refer to the camera documentation manual (and the CmuCam2 Viewer source code) for authoritative information.</p>
+	<p>When retrieving packets of data from the camera you can retrieve it one of the Packet subclasses, these are in the <code>Bham.Cmu.CmuCam2.Packets</code> namespace, here is a general description:</p>
+	<ul>
+		<li><b><code>DPacket</code></b> - Contains information about frame differencing. Coordinates refer to the 8x8 or 16x16 grid of squares and not actual pixel coordinates.</li>
+		<li><b><code>DPacketM1</code></b> - Contains information about frame differencing when in Mode 1. Includes a difference bitmap.</li>
+		<li><b><code>DPacketM2</code></b> - Contains information about frame differencing when in Mode 2. Includes a delta bitmap.</li>
+		<li><b><code>DPacketM3</code></b> - Contains information about frame differencing when in Mode 3. Includes a averaged bitmap.</li>
+		
+		<li><b><code>FPacket</code></b> - Contains a single-channel (8-bit) or three-channel (24-bit) image from the camera. Includes a method to convert it to a GDI <code>Bitmap</code>.</li>
+		
+		<li><b><code>HPacket</code></b> - Contains histogram data about a single channel from the camera.</li>
+		
+		<li><b><code>SPacket</code></b> - Contains statistical information (mean and absolute deviation) about an image.</li>
+		<li><b><code>SPacketM1</code></b> - Contains statistical information (mean and absolute deviation) about an image, as well as the mean colour for each row of pixels from the camera.</li>
+		<li><b><code>SPacketM2</code></b> - Contains statistical information (mean and absolute deviation) about an image, as well as the mean colour and absolute deviation for each row of pixels from the camera.</li>
+		
+		<li><b><code>TPacket</code></b> - Contains color-tracking information, including the rectangle and centroid of the targetted blob.</li>
+		<li><b><code>TPacketM1</code></b> - Similar to TPacket, but also includes a binary bitmap showing what pixels refer to the targetted blob. Processing the bitmap is an inexact science.</li>
+		<li><b><code>TPacketM2</code></b> - Similar to TPacket, but also includes simple information about each line in the image and what part of that line is part of the tracked mass.</li>
+	</ul>
+	
+	<h2>CMUcam2 Viewer GUI</h2>
+	
+	<p>Most controls in the form have associated tooltip information, simply mouse-over a control for an informational popup to appear.</p>
+	
+	<h3>Select a Port</h3>
+	
+	<p><a href="1-Select.png"><img src="1-Select.png" height="100" alt="Screenshot" /></a> When you start the program you'll be presented with a list of COM (serial) ports on your computer and a list of baud-rates supported by the CMUcam2 camera.</p>
+	<p>The camera's baud rate is set by jumpers on the camera itself, by default this is 115200. Click OK to start using the program. If no camera is detected you will get an error message. <a href="2-Error.png"><img height="75" style="vertical-align: middle; float: none;" src="2-Error.png" alt="Screenshot" /></a></p>
+	
+	<h3>Initial View</h3>
+	
+	<a href="3-Initial.png"><img src="3-Initial.png" width="400" alt="Screenshot" /></a>
+	<p>Upon startup the camera's configuration and state will be reset, the main window's controls show the default set-up for the camera.</p>
+	<p>The controls in the top-right control the Virtual Window area of the camera, also 
+		known as the &quot;Region of Interest&quot;. It selects a subset of the camera&#39;s 
+		full-frame to work on, as it reduces distracting elements and results in less 
+		data to send down the serial connection. The CMUcam2 has two resolution modes 
+		(High and Low), altering the resolution mode or the downsampling has an effect 
+		on the window dimensions. Updated configuration settings are pushed to the 
+		camera as each control loses focus or has its value changed (so there is no 
+		&quot;Set&quot; button). Click Reset to restore the default virtual window settings (but 
+		leaving all other configuration settings alone).</p>
+	
+	<h3>Image</h3>
+	<p><a href="4-Image.png"><img src="4-Image.png" width="400" alt="Screenshot" /></a> 
+		The <b>Image</b> tab lets you acquire single frames from the camera, as well as 
+		to view streaming frames. Click <b>Get Single Frame</b> to grab a single frame 
+		from the camera. Below are the estimated times for frames to download when using 
+		the full Virtual Windows. To get smooth video-like streaming frames select a 
+		Virtual Window size smaller than 30x30 pixels in single-channel mode.</p>
+	<ul>
+		<li>High Resolution, 3-channel: 12 seconds.</li>
+		<li>High Resolution, 1-channel: 4 seconds.</li>
+		<li>Low Resolution, 3-channel: 3 seconds.</li>
+		<li>Low Resolution, 1-channel: 1.2 seconds.</li>
+	</ul>
+	<p>
+		The &quot;<b>Pixel Difference</b>&quot; checkbox causes the camera to perform horizontal Edge 
+		Detection when acquiring a frame.</p>
+	<p>
+&nbsp;The &quot;<b>Save Image</b>&quot; button only saves the image and not any overlay information. The 
+		&quot;<b>Stretch</b>&quot; checkbox will scale the contents of the left side of the window to 
+		fill (while maintaining aspect ratio). The &quot;<b>Pick Color</b>&quot; button will show the 
+		color under the mouse cursor in a textbox next to the button (but only when the 
+		cursor is positioned over the left view).</p>
+	
+	<h3>Tracking</h3>
+	<a href="5-Tracking1.png"><img src="5-Tracking1.png" width="400" alt="Screenshot" /></a>
+	<a href="5-Tracking2.png"><img src="5-Tracking2.png" width="400" alt="Screenshot" /></a>The 	<b>Tracking</b>  tab allows you to track targets by their color. Four presets for 
+	Red, Green Blue, and Yellow are present in the GUI, but you can also define your 
+	own custom color range. Click the color button next to the Blue textbox to open 
+	the system color picker.<p>
+		&quot;<b>Live Tracking</b>&quot; will show a rectangular shape in the main view to show the 
+		current location of the tracked object. If an image was earlier taken with &quot;<b>Get 
+		Frame</b>&quot; then that will continue to be shown. You can hide this by choosing &quot;<b>Show 
+		Image and Overlay</b>&quot; at the bottom of the window. Thr white dot in the middle 
+		represents the centroid of the mass.</p>
+	<p>
+		&quot;<b>Live Tracking with Bitmap</b>&quot; will show cyan pixels on the main view illustrating 
+		which pixels belong to the tracked object (thus giving a much higher level of 
+		detail than a simple rectangle). However the CMUCam2 Viewer does not currently 
+		correctly interpret this data.</p>
+	<p>
+		&quot;<b>Live Tracking with Stats</b>&quot; will show Orange bars illustrating the range of 
+		pixels in the current row that belong to the currently tracked color. The white 
+		dots mark the average position. This provides a higher level of detail than the 
+		simple rectangle.</p>
+&nbsp;<h3>Frame Difference</h3>
+	<p><a href="6-Diff.png"><img src="6-Diff.png" width="400" alt="Screenshot" /></a> 
+		Frame difference mode allows you to take a single &#39;snapshot&#39; frame into the 
+		Difference Buffer and then compare all subsequent frames with that snapshot 
+		frame. Blue squares represent regions that have changed since the initial 
+		snapshot frame. The white square is the centroid of the different pixels. There 
+		are two resolution modes, one with an 8x8 grid (64 squares) and another with a 
+		16x16 grid giving 256 squares. The higher-resolution option will have a lower 
+		frame-rate because more data is required to be transfered.</p>
+	<p>The grid does not exactly align with the still image frames shown. This is a 
+		known bug.</p>
+	<p>The additional Frame Difference mode buttons do not display any additional 
+		information in the main view, though the code for working with the data is 
+		implemented in the library. The buttons in the GUI are disabled.</p>
+	
+	<h3>Mean and Deviation</h3>
+	<a href="7-Mean1.png"><img src="7-Mean1.png" width="200" alt="Screenshot" /></a>
+	<a href="7-Mean2.png"><img src="7-Mean2.png" width="200" alt="Screenshot" /></a>The
+	<b>Mean</b> tab shows the current average color in the frame (or rather, virtual 
+	window). The information is displayed in three bars, the middle bar shows the 
+	average color, the left bar shows the mean average color minus the absolute 
+	deviation, and the right bar shows the average color plus the absolute 
+	deviation.<p>
+		The &quot;<b>Live Mean Display with Per-Line Mean Values</b>&quot; divides the vertical bars into 
+		rows, each row corresponds to a row of pixels in the camera&#39;s virtual window 
+		image. The row&#39;s color is the average color from that row.</p>
+	<p>
+		The &quot;<b>Live Mean Display with Per-Line Mean and Deviation Values</b>&quot; is similar to 
+		the one above, but also contains Absolute Deviation values for each row rather 
+		than just the image as a whole. The values are subtracted and added in the left 
+		and right columns respectively.</p>
+&nbsp;<h3>Histograms</h3>
+	<p><a href="8-Histo.png"><img src="8-Histo.png" width="200" alt="Screenshot" /></a> 
+		The Histogram display shows the distribution of pixels in each channel (Red, 
+		Green, and Blue, or YCbCr if selected, though this is not reflected in the GUI). </p>
+	<p>You can either have a Live Histogram display of a single channel, or you can 
+		refresh all three channels at once.</p>
+	<p>Moving your cursor over a histogram display will show the intensity range of that 
+		histogram bin (all pixels are in the range 16-240 rather than the usual 0-255), 
+		as well as the number of pixels in that bin. The figure in the top-right shows 
+		the total number of pixels in the histogram.</p>
+	<p>You can specify 28, 14, or 7 bins for the histograms, as well as a scaling 
+		factor.</p>
+	<p>The &quot;<b>Limit Histogram to pixels within the Tracking color range</b>&quot; checkbox causes 
+		the camera to only add a pixel to a histogram if it falls between the Min and 
+		Max colors on the Tracking tab.</p>
+	
+	<h3>Auxilary IO and Servos</h3>
+	<a href="9-Aux.png"    ><img src="9-Aux.png"    width="200" alt="Screenshot" /></a>
+	<a href="10-Servos.png"><img src="10-Servos.png" width="200" alt="Screenshot" /></a>These 
+	tabs show the status of the Button input and Auxiliary IO line. You can also set 
+	the behaviour of the Tracking LEDs.<p>
+		The Servos tab lets you control any servos attached to the CMUcam2 board. These 
+		servo controls are untested. The &quot;<b>Home</b>&quot; button will bring all servos to 
+		the 128 position. Refer to the CMU Camera documentation for servo control 
+		information.</p>
+&nbsp;<h2>Bugs and Known Issues</h2>
+	
+	<dl>
+		<dt>Live Tracking with Bitmap Display - The pixels from the bitmap don't line-up with the tracked object</dt>
+		<dd>The CMUcam2 Viewer parses and renders the Tracked Bitmap data in accordance with the camera's manual and serial port data format specification. I can't see any obvious way to get it to work properly.</dd>
+		
+		<dt>When the camera's processor is set to a low framerate (below 17FPS) the program crashes.</dt>
+		<dd>Lower frame-rates cause unexpected serial port signals to be sent. I could see no clear solution so I removed the GUI's ability to change the camera's frame-rate. I don't think anyone needed to modify this in the first place.</dd>
+		
+		<dt>Quirks in the main camera view (left panel) when 'Stretch' is selected or with varying Virtual Window and Downsampling settings)</dt>
+		<dd>These are minor bugs caused by mathematically incorrect graphical painting code. I believe I've ironed all of these out, but if you can find a specific case where things fall apart it should be trivial to fix by modifying the CmuView.cs class.</dd>
+		
+		<dt>The following features are implemented in the GUI but are implemented in the library:</dt>
+		<dd>
+			<ul>
+				<li>Bitmap display of Frame Difference Mode 2 and 3 packets</li>
+				<li>Uploading of Frame Difference bitmaps</li>
+				<li>Track-packet servo reporting</li>
+			</ul>
+		</dd>
+		
+		<dt>The GUI labels YCbCr data as RGB.</dt>
+		<dt>The Frame Difference grid does not align perfectly with the original image</dt>
+		<dd>A minor visual artefact caused by integer rounding errors when calculating the grid size.</dd>
+	</dl>
+	
+</body>
+</html>
